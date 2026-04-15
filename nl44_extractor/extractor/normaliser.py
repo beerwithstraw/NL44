@@ -138,7 +138,7 @@ def normalise_text(raw):
     # spaces, colons, slashes, apostrophes (both kinds), hyphens, periods,
     # parentheses.
     # So we keep all of those and remove everything else.
-    text = re.sub(r"[^a-z0-9\s/:'\u2019()\-.]", "", text)
+    text = re.sub(r"[^a-z0-9\s/:'\u2019()\-+.]", "", text)
 
     # Collapse multiple spaces
     text = re.sub(r'\s+', ' ', text)
