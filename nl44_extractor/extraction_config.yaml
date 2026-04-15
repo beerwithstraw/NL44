@@ -1,0 +1,26 @@
+# ============================================================
+# NL-44 Extraction Pipeline Configuration
+# ============================================================
+
+base_path: "/Users/pulkit/Desktop/Forms"
+
+fiscal_years:
+  - FY2026
+
+quarters: all
+
+master_sheet_path: "/Users/pulkit/Desktop/Forms/NL44_Master.xlsx"
+processed_log_path: "/Users/pulkit/Desktop/Forms/.NL44_processed_log.json"
+
+consolidated_mode: dynamic
+
+nl44_keywords:
+  - "NL-44"
+  - "MOTOR TP OBLIGATIONS"
+  - "LIABILITY ONLY POLICIES"
+  - "PACKAGE POLICIES"
+
+nl44_keyword_min_matches: 3
+
+# Per-company hard page overrides (optional, 1-indexed)
+nl44_page_overrides: {}
