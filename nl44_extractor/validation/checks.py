@@ -14,6 +14,7 @@ from dataclasses import dataclass, asdict
 
 from extractor.models import CompanyExtract
 from config.row_registry import ROW_ORDER
+from config.company_registry import COMPLETENESS_IGNORE
 
 logger = logging.getLogger(__name__)
 
@@ -54,7 +55,10 @@ def _get(exc: CompanyExtract, metric: str, period: str) -> Optional[float]:
 
 def _check_completeness(exc: CompanyExtract) -> List[ValidationResult]:
     results = []
+    ignore = COMPLETENESS_IGNORE.get(exc.company_key, set())
     for metric in ROW_ORDER:
+        if metric in ignore:
+            continue
         has_any = any(
             exc.current_year.data.get(metric, {}).get(p) is not None
             for p in ("qtr", "ytd")

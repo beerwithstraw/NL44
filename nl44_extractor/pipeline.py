@@ -98,6 +98,14 @@ def main():
         logger.info("All files up-to-date. Use --force to re-extract.")
         sys.exit(0)
 
+    # --- Skip companies ---
+    skip_set = set(config.get("skip_companies", []))
+    if skip_set:
+        skipped = [r for r in to_process if r.company_key in skip_set]
+        to_process = [r for r in to_process if r.company_key not in skip_set]
+        for r in skipped:
+            logger.info(f"  Skipping [{r.company_key}] — in skip_companies list")
+
     if args.dry_run:
         logger.info(f"DRY RUN — would extract {len(to_process)} files:")
         for r in to_process:

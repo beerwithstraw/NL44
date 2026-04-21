@@ -32,8 +32,10 @@ ROW_ALIASES = {
     "package policies (p)":                                   "package_premium",
 
     # Total MTP (L+P) — the explicit "(l+p)" row is the reliable anchor
-    "business premium (l+p)":                                 "total_mtp_premium",
+    "business premium (l+p)":                                                "total_mtp_premium",
+    "business (l+p)":                                                        "total_mtp_premium",
     "total gross direct motor third party insurance business premium (l+p)": "total_mtp_premium",
+    "total gross direct motor third party insurance business (l+p)":         "total_mtp_premium",
 
     # Motor OD — multi-line cell comes through as single string after normalise_text
     "total gross direct motor own damage insurance business premium": "motor_od_premium",

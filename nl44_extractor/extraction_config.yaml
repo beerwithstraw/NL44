@@ -22,5 +22,23 @@ nl44_keywords:
 
 nl44_keyword_min_matches: 3
 
-# Per-company hard page overrides (optional, 1-indexed)
-nl44_page_overrides: {}
+# Companies to skip entirely — no NL-44 published or schema incompatible.
+# Health-only insurers don't write Motor TP; Chola uses the new IRDAI 2024
+# regulatory compliance schema (GCV/PCV/Tractor counts) not yet supported.
+skip_companies:
+  # Health-only insurers — don't write Motor TP
+  - niva_bupa
+  - aditya_birla_health
+  - care_health
+  - galaxy_health
+  - manipal_cigna
+  - narayana_health
+  # Different regulatory schema (GCV/PCV/Tractor compliance) — not yet supported
+  - chola_ms
+  # Agriculture insurer — no Motor TP; AIC consolidated falsely hits NL-27 page
+  - aic
+
+# Per-company overrides — min_matches only; hard start/end as last resort
+nl44_page_overrides:
+  iffco_tokio:
+    min_matches: 2   # IFFCO form omits "LIABILITY ONLY POLICIES" as a phrase

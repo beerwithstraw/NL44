@@ -19,8 +19,9 @@ logger = logging.getLogger(__name__)
 DEFAULT_KEYWORDS = [
     "NL-44",
     "MOTOR TP OBLIGATIONS",
-    "LIABILITY ONLY POLICIES",
-    "PACKAGE POLICIES",
+    "QUARTERLY RETURNS",   # always in the form title; old format also had
+                           # "LIABILITY ONLY POLICIES" / "PACKAGE POLICIES" but
+                           # the new IRDAI 2024 format (Chola etc.) does not
 ]
 DEFAULT_MIN_MATCHES = 3
 
@@ -28,7 +29,8 @@ FORM_HEADER_PATTERN = re.compile(r"FORM\s+NL[-\s]?(\d+)", re.IGNORECASE)
 
 
 def _page_keyword_count(text: str, keywords: List[str]) -> int:
-    text_upper = text.upper()
+    # Normalise spacing variants e.g. "NL - 44" → "NL-44" before matching
+    text_upper = re.sub(r'NL\s*-\s*(\d+)', r'NL-\1', text.upper())
     return sum(1 for kw in keywords if kw.upper() in text_upper)
 
 

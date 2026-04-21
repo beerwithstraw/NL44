@@ -33,6 +33,8 @@ COMPANY_MAP = {
     "royal sundaram": "royal_sundaram",
     "future generali": "future_generali",
     "futuregenerali": "future_generali",
+    "generalicentral": "future_generali",
+    "generali central": "future_generali",
     "shriram general": "shriram_general",
     "shriram": "shriram_general",
     "zurich kotak": "zurich_kotak",
@@ -55,6 +57,7 @@ COMPANY_MAP = {
     "liberty general": "liberty_general",
     "magma general": "magma_general",
     "magma hdi": "magma_general",
+    "magma": "magma_general",
     "sbi": "sbi_general",
     "sbi general": "sbi_general",
     "kshema": "kshema_general",
@@ -93,3 +96,11 @@ COMPANY_DISPLAY_NAMES = {
 }
 
 DEDICATED_PARSER: dict = {}
+
+# Metrics that are structurally absent for a company (blank form filed).
+# Keys = company_key, values = set of metric names to skip in COMPLETENESS check.
+COMPLETENESS_IGNORE: dict = {
+    "indusind_general": {"liability_premium", "package_premium", "total_mtp_premium", "motor_od_premium", "total_premium"},
+    "shriram_general":  {"liability_premium", "package_premium", "total_mtp_premium", "motor_od_premium", "total_premium"},
+    "acko":             {"liability_premium", "package_premium", "total_mtp_premium", "motor_od_premium", "total_premium"},
+}
