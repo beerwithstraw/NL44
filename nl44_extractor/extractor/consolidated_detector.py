@@ -26,6 +26,10 @@ DEFAULT_KEYWORDS = [
 DEFAULT_MIN_MATCHES = 3
 
 FORM_HEADER_PATTERN = re.compile(r"FORM\s+NL[-\s]?(\d+)", re.IGNORECASE)
+TOC_SKIP_PATTERN = re.compile(
+    r"TABLE\s+OF\s+CONTENTS|FORM\s+INDEX|INDEX\s+OF\s+FORMS",
+    re.IGNORECASE,
+)
 
 
 def _page_keyword_count(text: str, keywords: List[str]) -> int:
@@ -55,6 +59,9 @@ def find_nl44_pages(
 
         start_page = None
         for i, text in enumerate(page_texts):
+            if TOC_SKIP_PATTERN.search(text):
+                logger.debug(f"  page {i + 1}: TOC page, skipping")
+                continue
             if _page_keyword_count(text, keywords) >= min_matches:
                 start_page = i
                 break
