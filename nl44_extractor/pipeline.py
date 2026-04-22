@@ -197,9 +197,8 @@ def main():
             os.path.dirname(master_path), "NL44_validation_report.csv"
         )
         write_validation_report(all_validation_results, report_path)
-        if not args.force_company:
-            write_validation_summary_sheet(report_path, master_path)
-            write_validation_detail_sheet(report_path, master_path)
+        write_validation_summary_sheet(report_path, master_path, force_company=args.force_company)
+        write_validation_detail_sheet(report_path, master_path, force_company=args.force_company)
         logger.info(f"Validation report: {report_path}")
 
     logger.info("=" * 60)

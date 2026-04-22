@@ -40,5 +40,15 @@ skip_companies:
 
 # Per-company overrides — min_matches only; hard start/end as last resort
 nl44_page_overrides:
-  iffco_tokio:
-    min_matches: 2   # IFFCO form omits "LIABILITY ONLY POLICIES" as a phrase
+  ECGC:
+    start: 48
+    end: 48
+  GENERALI_CENTRAL:
+    start: 53
+    end: 53
+  IFFCO_TOKIO:
+    start: 82
+    end: 82
+  NAVI:
+    start: 49
+    end: 49
