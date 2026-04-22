@@ -36,7 +36,6 @@ def is_toc_page(text: str) -> bool:
     valid_forms = set(m for m in matches if 1 <= int(m) <= 45)
     return len(valid_forms) >= 4
 
-
 def _page_keyword_count(text: str, keywords: List[str]) -> int:
     # Normalise spacing variants e.g. "NL - 44" → "NL-44" before matching
     text_upper = re.sub(r'NL\s*-\s*(\d+)', r'NL-\1', text.upper())

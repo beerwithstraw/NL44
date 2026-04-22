@@ -37,12 +37,11 @@ skip_companies:
   - chola_ms
   # Agriculture insurer — no Motor TP; AIC consolidated falsely hits NL-27 page
   - aic
+  # Export credit insurer — no Motor TP
+  - ecgc
 
 # Per-company overrides — min_matches only; hard start/end as last resort
 nl44_page_overrides:
-  ECGC:
-    start: 48
-    end: 48
   GENERALI_CENTRAL:
     start: 53
     end: 53
@@ -52,3 +51,6 @@ nl44_page_overrides:
   NAVI:
     start: 49
     end: 49
+  NEWINDIA:
+    start: 44
+    end: 44
