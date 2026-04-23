@@ -33,6 +33,7 @@ skip_companies:
   - galaxy_health
   - manipal_cigna
   - narayana_health
+  - star_health
   # Different regulatory schema (GCV/PCV/Tractor compliance) — not yet supported
   - chola_ms
   # Agriculture insurer — no Motor TP; AIC consolidated falsely hits NL-27 page
@@ -42,15 +43,15 @@ skip_companies:
 
 # Per-company overrides — min_matches only; hard start/end as last resort
 nl44_page_overrides:
-  GENERALI_CENTRAL:
+  future_generali:
     start: 53
     end: 53
-  IFFCO_TOKIO:
+  iffco_tokio:
     start: 82
     end: 82
-  NAVI:
+  navi_general:
     start: 49
     end: 49
-  NEWINDIA:
+  new_india:
     start: 44
     end: 44

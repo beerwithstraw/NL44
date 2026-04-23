@@ -150,7 +150,9 @@ COMPANY_DISPLAY_NAMES = {
     "zurich_kotak": "Zurich Kotak General Insurance Company (India) Limited",
 }
 
-DEDICATED_PARSER: dict = {}
+DEDICATED_PARSER: dict = {
+    "royal_sundaram": "parse_royal_sundaram",
+}
 
 # Metrics that are structurally absent for a company (blank form filed).
 # Keys = company_key, values = set of metric names to skip in COMPLETENESS check.
