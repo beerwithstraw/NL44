@@ -36,7 +36,7 @@ skip_companies:
   - star_health
   # Different regulatory schema (GCV/PCV/Tractor compliance) — not yet supported
   - chola_ms
-  # Agriculture insurer — no Motor TP; AIC consolidated falsely hits NL-27 page
+  # Agriculture insurer — no Motor TP; AIC consolidated falsely hits NL-44 page
   - aic
   # Export credit insurer — no Motor TP
   - ecgc

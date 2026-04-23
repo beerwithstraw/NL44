@@ -3,7 +3,7 @@ Excel Writer for NL-44 (Motor TP Obligations).
 
 Master_Data: two rows per company per quarter — one for "For the Quarter",
 one for "Upto the Quarter" — with the five NL-44 item values as columns.
-This mirrors the Quarter_Info pattern used in NL-39.
+This mirrors the Quarter_Info pattern used in NL-44.
 
 Verification sheet: single table matching the PDF layout —
   Rows = items, Cols = For the Quarter | Upto the Quarter.

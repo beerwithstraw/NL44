@@ -1,7 +1,7 @@
 """
 Global constants for the NL-44 Extractor.
 
-Master sheet layout follows the same Quarter_Info pattern as NL-39:
+Master sheet layout follows the same Quarter_Info pattern as NL-44:
   - One row per Quarter_Info value ("For the Quarter" / "Upto the Quarter")
   - The five NL-44 items appear as metric columns
   - col_name.lower() must equal the metric key in row_registry.ROW_ORDER
